@@ -1,40 +1,4 @@
-"use client"
-
-import { useState, useEffect } from "react"
-import Link from "next/link"
-import Image from "next/image"
-import { ArrowRight, Zap, Truck, Shield, Timer, Gift, Mail, Check, X, Package } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Navigation } from "@/components/navigation"
-import { Footer } from "@/components/footer"
-import { ProductWidget } from "@/components/product-widget"
-import { getAllProducts, getBundleProduct } from "@/lib/products"
-
-function CountdownTimer({ size = "normal" }: { size?: "normal" | "small" }) {
-  const [timeLeft, setTimeLeft] = useState({
-    hours: 23,
-    minutes: 59,
-    seconds: 59,
-  })
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setTimeLeft((prev) => {
-        if (prev.seconds > 0) {
-          return { ...prev, seconds: prev.seconds - 1 }
-        } else if (prev.minutes > 0) {
-          return { ...prev, minutes: prev.minutes - 1, seconds: 59 }
-        } else if (prev.hours > 0) {
-          return { hours: prev.hours - 1, minutes: 59, seconds: 59 }
-        }
-        return prev
-      })
-    }, 1000)
-
-    return () => clearInterval(timer)
-  }, [])
-
+39e183094c1b3eb11b320d5b356fe0396ce5be29
   const isSmall = size === "small"
 
   return (
