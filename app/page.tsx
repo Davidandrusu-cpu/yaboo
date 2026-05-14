@@ -61,10 +61,15 @@ function NewsletterWidget() {
   const [formData, setFormData] = useState({ name: "", email: "" })
   const [isSubmitted, setIsSubmitted] = useState(false)
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitted(true)
-  }
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault()
+  await fetch("https://hook.eu1.make.com/skwjip3h4cwqxrpscj7cdn1m4w9vh2w2", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ name: formData.name, email: formData.email, type: "newsletter" }),
+  })
+  setIsSubmitted(true)
+}
 
   if (isSubmitted) {
     return (
@@ -141,9 +146,15 @@ function SubscriptionWidget() {
   const [formData, setFormData] = useState({ name: "", email: "", phone: "" })
   const [isSubmitted, setIsSubmitted] = useState(false)
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitted(true)
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault()
+  await fetch("https://hook.eu1.make.com/skwjip3h4cwqxrpscj7cdn1m4w9vh2w2", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ name: formData.name, email: formData.email, phone: formData.phone, type: "subscription" }),
+  })
+  setIsSubmitted(true)
+}
   }
 
   if (isSubmitted) {
