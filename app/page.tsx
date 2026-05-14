@@ -61,15 +61,15 @@ function NewsletterWidget() {
   const [formData, setFormData] = useState({ name: "", email: "" })
   const [isSubmitted, setIsSubmitted] = useState(false)
 
-const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault()
-  await fetch("https://hook.eu1.make.com/skwjip3h4cwqxrpscj7cdn1m4w9vh2w2", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ name: formData.name, email: formData.email, type: "newsletter" }),
-  })
-  setIsSubmitted(true)
-}
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    await fetch("https://hook.eu1.make.com/skwjip3h4cwqxrpscj7cdn1m4w9vh2w2", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name: formData.name, email: formData.email, type: "newsletter" }),
+    })
+    setIsSubmitted(true)
+  }
 
   if (isSubmitted) {
     return (
@@ -146,15 +146,15 @@ function SubscriptionWidget() {
   const [formData, setFormData] = useState({ name: "", email: "", phone: "" })
   const [isSubmitted, setIsSubmitted] = useState(false)
 
-const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault()
-  await fetch("https://hook.eu1.make.com/skwjip3h4cwqxrpscj7cdn1m4w9vh2w2", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ name: formData.name, email: formData.email, phone: formData.phone, type: "subscription" }),
-  })
-  setIsSubmitted(true)
-}
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    await fetch("https://hook.eu1.make.com/skwjip3h4cwqxrpscj7cdn1m4w9vh2w2", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name: formData.name, email: formData.email, phone: formData.phone, type: "subscription" }),
+    })
+    setIsSubmitted(true)
+  }
 
   if (isSubmitted) {
     return (
@@ -458,7 +458,6 @@ export default function HomePage() {
             ))}
           </div>
 
-          {/* Bundle Product Widget */}
           {bundleProduct && (
             <div className="max-w-2xl mx-auto">
               <div className="text-center mb-8">
@@ -526,7 +525,6 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Yaboo Column */}
             <div className="bg-secondary text-secondary-foreground rounded-2xl p-8">
               <div className="flex items-center gap-3 mb-6">
                 <Image
@@ -559,7 +557,6 @@ export default function HomePage() {
               </ul>
             </div>
 
-            {/* Competition Column */}
             <div className="bg-background rounded-2xl p-8 border border-border">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-12 h-12 rounded-lg bg-muted flex items-center justify-center">
