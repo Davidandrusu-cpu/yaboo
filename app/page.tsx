@@ -159,7 +159,6 @@ function SubscriptionWidget() {
   }
 
   if (isSubmitted) {
-    return (
       <div className="bg-accent/10 border-2 border-accent rounded-2xl p-8 text-center">
         <div className="w-16 h-16 rounded-full bg-accent/20 flex items-center justify-center mx-auto mb-4">
           <Package className="w-8 h-8 text-accent" />
@@ -167,7 +166,6 @@ function SubscriptionWidget() {
         <h3 className="text-2xl font-bold text-foreground mb-2">Cerere trimisa!</h3>
         <p className="text-muted-foreground">Vei primi oferta personalizata pe email in maxim 24 de ore.</p>
       </div>
-    )
   }
 
   return (
