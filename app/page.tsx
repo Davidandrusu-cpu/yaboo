@@ -155,7 +155,6 @@ const handleSubmit = async (e: React.FormEvent) => {
   })
   setIsSubmitted(true)
 }
-  }
 
   if (isSubmitted) {
     return (
