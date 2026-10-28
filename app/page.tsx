@@ -445,12 +445,12 @@ export default function HomePage() {
               { title: "Fara aditivi", desc: "100% natural, fara conservanti" },
               { title: "Produs local", desc: "Fabricat in Romania cu dragoste" },
             ].map((item, i) => (
-              <div key={i} className="widget-hover text-center p-6 bg-muted rounded-xl border border-border transition-all duration-300 hover:scale-[1.04] hover:border-accent hover:shadow-2xl hover:shadow-accent/20">
-                <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-4">
-                  <span className="text-xl font-bold text-accent drop-shadow-[0_0_12px_rgba(250,204,21,0.7)]">{i + 1}</span>
-                </div>
-                <h3 className="font-semibold text-foreground mb-2">{item.title}</h3>
-                <p className="text-muted-foreground text-sm">{item.desc}</p>
+              <div key={i} className="widget-hover text-center p-6 bg-accent rounded-xl border-2 border-accent transition-all duration-300 hover:scale-[1.06] hover:border-white hover:shadow-2xl hover:shadow-accent/30">
+<div className="w-12 h-12 rounded-full bg-black flex items-center justify-center mx-auto mb-4">
+	                  <span className="text-xl font-bold text-white">{i + 1}</span>
+	                </div>
+	                <h3 className="font-semibold text-black mb-2">{item.title}</h3>
+                <p className="text-black/75 text-sm">{item.desc}</p>
               </div>
             ))}
           </div>
