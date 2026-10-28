@@ -167,8 +167,8 @@ function SubscriptionWidget() {
           <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-accent/20 mb-6">
             <Package className="w-7 h-7 text-accent" />
           </div>
-          <h3 className="text-2xl md:text-3xl font-bold mb-3">
-            Abonament lunar <span className="text-accent">Yaboo!</span>
+          <h3 className="text-2xl md:text-3xl font-bold mb-3 text-yellow-100 drop-shadow-[0_0_14px_rgba(250,204,21,0.24)]">
+            <span className="text-accent">Abonament lunar</span> <span className="text-yellow-300">Yaboo!</span>
           </h3>
           <p className="text-secondary-foreground/80">
             Primeste biltong-ul tau preferat in fiecare luna, direct la usa. Alege cate pachete vrei din fiecare aroma si te contactam cu oferta personalizata.
@@ -194,7 +194,7 @@ function SubscriptionWidget() {
                     max="10"
                     value={quantities[product.key as keyof typeof quantities]}
                     onChange={(e) => setQuantities({ ...quantities, [product.key]: parseInt(e.target.value) })}
-                    className="flex-1 accent-accent h-2 bg-background/20 rounded-full appearance-none cursor-pointer"
+                    className="segmented-slider flex-1 accent-accent h-2 bg-background/20 rounded-full appearance-none cursor-pointer"
                   />
                   <span className="text-xl font-bold text-accent w-8 text-center">
                     {quantities[product.key as keyof typeof quantities]}
@@ -514,8 +514,8 @@ export default function HomePage() {
       <section className="py-20 bg-muted">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Yaboo! vs Competitia
+            <h2 className="text-3xl md:text-4xl font-bold text-accent mb-4 drop-shadow-[0_0_18px_rgba(250,204,21,0.28)]">
+              <span className="text-accent">Yaboo!</span> <span className="text-foreground">vs</span> <span className="text-yellow-300">Competitia</span>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               De ce sa alegi Yaboo! in locul altor snack-uri proteice de pe piata?
