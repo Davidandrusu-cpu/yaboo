@@ -407,10 +407,10 @@ export default function HomePage() {
       </section>
 
       {/* Products Section */}
-      <section id="products" className="py-20 bg-muted">
+      <section id="products" className="yellow-spotlight py-20 bg-muted">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-accent mb-4 drop-shadow-[0_0_18px_rgba(250,204,21,0.28)]">
               Produsele noastre
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -427,11 +427,11 @@ export default function HomePage() {
       </section>
 
       {/* Why Yaboo Section with Bundle */}
-      <section className="py-20 bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              De ce Yaboo?
+<section className="yellow-spotlight py-20 bg-background">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl md:text-4xl font-bold text-accent mb-4 drop-shadow-[0_0_18px_rgba(250,204,21,0.28)]">
+                  De ce Yaboo?
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               Biltong-ul nostru este preparat cu pasiune, dupa retete autentice sud-africane.
@@ -445,9 +445,9 @@ export default function HomePage() {
               { title: "Fara aditivi", desc: "100% natural, fara conservanti" },
               { title: "Produs local", desc: "Fabricat in Romania cu dragoste" },
             ].map((item, i) => (
-              <div key={i} className="text-center p-6 bg-muted rounded-xl border border-border">
+              <div key={i} className="widget-hover text-center p-6 bg-muted rounded-xl border border-border transition-all duration-300 hover:scale-[1.04] hover:border-accent hover:shadow-2xl hover:shadow-accent/20">
                 <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-4">
-                  <span className="text-xl font-bold text-accent">{i + 1}</span>
+                  <span className="text-xl font-bold text-accent drop-shadow-[0_0_12px_rgba(250,204,21,0.7)]">{i + 1}</span>
                 </div>
                 <h3 className="font-semibold text-foreground mb-2">{item.title}</h3>
                 <p className="text-muted-foreground text-sm">{item.desc}</p>

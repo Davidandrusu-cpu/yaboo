@@ -19,7 +19,7 @@ export function ProductWidget({ product }: ProductWidgetProps) {
 
   return (
     <Link href={`/product/${product.id}`}>
-      <div className="bg-secondary text-secondary-foreground rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all group hover:scale-[1.02]">
+      <div className="widget-hover bg-secondary text-secondary-foreground rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group hover:scale-[1.04] hover:ring-2 hover:ring-accent/70">
         {/* Product Image */}
         <div className="relative h-56 overflow-hidden">
           <Image
