@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { ArrowRight, Zap, Truck, Shield, Timer, Gift, Mail, Check, X, Package } from "lucide-react"
+import { ArrowRight, ChevronLeft, ChevronRight, Zap, Truck, Shield, Timer, Gift, Mail, Check, X, Package } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Navigation } from "@/components/navigation"
@@ -269,7 +269,7 @@ export default function HomePage() {
       >
         <div className="hero-content relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8">
+            <div className="space-y-8 order-2 lg:order-1">
               <div className="inline-flex items-center gap-2 bg-accent/10 text-accent px-4 py-2 rounded-full">
                 <Zap className="w-4 h-4" />
                 <span className="text-sm font-bold">COMBINA REDUCERILE: PANA LA 30% OFF!</span>
@@ -316,7 +316,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="relative">
+            <div className="relative order-1 lg:order-2">
               <div className="hero-logo-frame relative aspect-square max-w-lg mx-auto" style={{ background: "transparent", boxShadow: "none" }}>
                 <div className="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-accent/40 blur-3xl" />
                 <div className="absolute -bottom-8 -left-8 h-40 w-40 rounded-full bg-accent/25 blur-3xl" />
@@ -352,8 +352,8 @@ export default function HomePage() {
       {/* Features */}
       <section className="py-12 bg-muted">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="widget-hover flex items-center gap-4 p-6 rounded-xl bg-background border border-border transition-all duration-300">
+          <div className="flex gap-3 overflow-x-auto snap-x snap-mandatory scrollbar-hide md:grid md:grid-cols-3 md:gap-6">
+            <div className="widget-hover min-w-[82%] snap-center flex items-center gap-3 p-4 rounded-xl bg-background border border-border transition-all duration-300 md:min-w-0 md:gap-4 md:p-6">
               <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center shrink-0">
                 <Zap className="w-6 h-6 text-accent" />
               </div>
@@ -362,7 +362,7 @@ export default function HomePage() {
                 <p className="text-muted-foreground text-sm">Sursa excelenta de proteine naturale</p>
               </div>
             </div>
-            <div className="widget-hover flex items-center gap-4 p-6 rounded-xl bg-background border border-border transition-all duration-300">
+            <div className="widget-hover min-w-[82%] snap-center flex items-center gap-3 p-4 rounded-xl bg-background border border-border transition-all duration-300 md:min-w-0 md:gap-4 md:p-6">
               <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center shrink-0">
                 <Truck className="w-6 h-6 text-accent" />
               </div>
@@ -371,7 +371,7 @@ export default function HomePage() {
                 <p className="text-muted-foreground text-sm">In toata Romania, in 24-48h</p>
               </div>
             </div>
-            <div className="widget-hover flex items-center gap-4 p-6 rounded-xl bg-background border border-border transition-all duration-300">
+            <div className="widget-hover min-w-[82%] snap-center flex items-center gap-3 p-4 rounded-xl bg-background border border-border transition-all duration-300 md:min-w-0 md:gap-4 md:p-6">
               <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center shrink-0">
                 <Shield className="w-6 h-6 text-accent" />
               </div>
@@ -417,10 +417,18 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {regularProducts.map((product) => (
-              <ProductWidget key={product.id} product={product} />
-            ))}
+          <div className="relative md:px-0">
+            <button type="button" aria-label="Produsul anterior" className="mobile-carousel-arrow absolute left-0 top-1/2 z-20 -translate-y-1/2 rounded-full bg-accent p-2 text-accent-foreground shadow-lg md:hidden" onClick={() => document.querySelector('.mobile-product-track')?.scrollBy({ left: -260, behavior: 'smooth' })}>
+              <ChevronLeft className="h-5 w-5" />
+            </button>
+            <div className="mobile-product-track grid grid-cols-1 gap-8 md:grid md:grid-cols-3 md:gap-8">
+              {regularProducts.map((product) => (
+                <ProductWidget key={product.id} product={product} />
+              ))}
+            </div>
+            <button type="button" aria-label="Urmatorul produs" className="mobile-carousel-arrow absolute right-0 top-1/2 z-20 -translate-y-1/2 rounded-full bg-accent p-2 text-accent-foreground shadow-lg md:hidden" onClick={() => document.querySelector('.mobile-product-track')?.scrollBy({ left: 260, behavior: 'smooth' })}>
+              <ChevronRight className="h-5 w-5" />
+            </button>
           </div>
         </div>
       </section>
