@@ -186,9 +186,7 @@
 }
 
 .widget-hover:hover {
-  transform: scale(1.04);
-  border-color: #facc15;
-  box-shadow: 0 0 0 2px rgba(250, 204, 21, 0.72), 0 0 28px rgba(250, 204, 21, 0.2);
+  transform: scale(1.05);
 }
 
 .hover-expand-button {
