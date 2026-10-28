@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { ArrowRight, Zap, Truck, Shield, Timer, Gift, Mail, Check, X, Package } from "lucide-react"
+import { ArrowRight, ChevronLeft, ChevronRight, Zap, Truck, Shield, Timer, Gift, Mail, Check, X, Package } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Navigation } from "@/components/navigation"
@@ -81,7 +81,7 @@ function NewsletterWidget() {
   }
 
   return (
-    <div className="bg-gradient-to-br from-muted to-muted/50 rounded-2xl p-8 md:p-12 border border-border">
+    <div className="widget-hover bg-gradient-to-br from-muted to-muted/50 rounded-2xl p-8 md:p-12 border border-border">
       <div className="max-w-2xl mx-auto text-center">
         <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-accent/10 mb-6">
           <Mail className="w-7 h-7 text-accent" />
@@ -161,14 +161,14 @@ function SubscriptionWidget() {
   }
 
   return (
-    <div className="bg-secondary text-secondary-foreground rounded-2xl p-8 md:p-12">
+    <div className="widget-hover bg-secondary text-secondary-foreground rounded-2xl p-8 md:p-12">
       <div className="max-w-3xl mx-auto">
         <div className="text-center mb-8">
           <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-accent/20 mb-6">
             <Package className="w-7 h-7 text-accent" />
           </div>
-          <h3 className="text-2xl md:text-3xl font-bold mb-3">
-            Abonament lunar <span className="text-accent">Yaboo!</span>
+          <h3 className="text-2xl md:text-3xl font-bold mb-3 text-yellow-100 drop-shadow-[0_0_14px_rgba(250,204,21,0.24)]">
+            <span className="text-accent">Abonament lunar</span> <span className="text-yellow-300">Yaboo!</span>
           </h3>
           <p className="text-secondary-foreground/80">
             Primeste biltong-ul tau preferat in fiecare luna, direct la usa. Alege cate pachete vrei din fiecare aroma si te contactam cu oferta personalizata.
@@ -194,7 +194,7 @@ function SubscriptionWidget() {
                     max="10"
                     value={quantities[product.key as keyof typeof quantities]}
                     onChange={(e) => setQuantities({ ...quantities, [product.key]: parseInt(e.target.value) })}
-                    className="flex-1 accent-accent h-2 bg-background/20 rounded-full appearance-none cursor-pointer"
+                    className="segmented-slider flex-1 accent-accent h-2 bg-background/20 rounded-full appearance-none cursor-pointer"
                   />
                   <span className="text-xl font-bold text-accent w-8 text-center">
                     {quantities[product.key as keyof typeof quantities]}
@@ -269,7 +269,7 @@ export default function HomePage() {
       >
         <div className="hero-content relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8">
+            <div className="space-y-8 order-2 lg:order-1">
               <div className="inline-flex items-center gap-2 bg-accent/10 text-accent px-4 py-2 rounded-full">
                 <Zap className="w-4 h-4" />
                 <span className="text-sm font-bold">COMBINA REDUCERILE: PANA LA 30% OFF!</span>
@@ -303,22 +303,21 @@ export default function HomePage() {
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="#products">
-                  <Button size="lg" className="bg-secondary text-secondary-foreground hover:bg-secondary/90 w-full sm:w-auto font-semibold">
+                  <Button size="lg" className="hover-expand-button border-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/90 w-full sm:w-auto font-semibold">
                     Vezi produsele
                     <ArrowRight className="w-5 h-5 ml-2" />
                   </Button>
                 </Link>
                 <Link href="/checkout">
-                  <Button size="lg" variant="outline" className="border-2 border-white text-white bg-black/35 hover:bg-white hover:text-black w-full sm:w-auto font-semibold shadow-lg">
+                  <Button size="lg" variant="outline" className="hover-expand-button border-2 border-white text-white bg-black/35 hover:bg-white hover:text-black w-full sm:w-auto font-semibold shadow-lg">
                     Comanda acum
                   </Button>
                 </Link>
               </div>
             </div>
 
-            <div className="relative">
-              <div className="hero-logo-frame relative aspect-square max-w-lg mx-auto">
-                <div className="absolute inset-0 rounded-3xl bg-black/35 shadow-2xl" />
+            <div className="relative order-1 lg:order-2">
+              <div className="hero-logo-frame relative aspect-square max-w-lg mx-auto" style={{ background: "transparent", boxShadow: "none" }}>
                 <div className="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-accent/40 blur-3xl" />
                 <div className="absolute -bottom-8 -left-8 h-40 w-40 rounded-full bg-accent/25 blur-3xl" />
                 <Image
@@ -353,8 +352,8 @@ export default function HomePage() {
       {/* Features */}
       <section className="py-12 bg-muted">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="flex items-center gap-4 p-6 rounded-xl bg-background border border-border">
+          <div className="flex gap-3 overflow-x-auto snap-x snap-mandatory scrollbar-hide md:grid md:grid-cols-3 md:gap-6">
+            <div className="widget-hover min-w-[82%] snap-center flex items-center gap-3 p-4 rounded-xl bg-background border border-border transition-all duration-300 md:min-w-0 md:gap-4 md:p-6">
               <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center shrink-0">
                 <Zap className="w-6 h-6 text-accent" />
               </div>
@@ -363,7 +362,7 @@ export default function HomePage() {
                 <p className="text-muted-foreground text-sm">Sursa excelenta de proteine naturale</p>
               </div>
             </div>
-            <div className="flex items-center gap-4 p-6 rounded-xl bg-background border border-border">
+            <div className="widget-hover min-w-[82%] snap-center flex items-center gap-3 p-4 rounded-xl bg-background border border-border transition-all duration-300 md:min-w-0 md:gap-4 md:p-6">
               <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center shrink-0">
                 <Truck className="w-6 h-6 text-accent" />
               </div>
@@ -372,7 +371,7 @@ export default function HomePage() {
                 <p className="text-muted-foreground text-sm">In toata Romania, in 24-48h</p>
               </div>
             </div>
-            <div className="flex items-center gap-4 p-6 rounded-xl bg-background border border-border">
+            <div className="widget-hover min-w-[82%] snap-center flex items-center gap-3 p-4 rounded-xl bg-background border border-border transition-all duration-300 md:min-w-0 md:gap-4 md:p-6">
               <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center shrink-0">
                 <Shield className="w-6 h-6 text-accent" />
               </div>
@@ -407,10 +406,10 @@ export default function HomePage() {
       </section>
 
       {/* Products Section */}
-      <section id="products" className="py-20 bg-muted">
+      <section id="products" className="yellow-spotlight py-20 bg-muted">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-accent mb-4 drop-shadow-[0_0_18px_rgba(250,204,21,0.28)]">
               Produsele noastre
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -418,20 +417,28 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {regularProducts.map((product) => (
-              <ProductWidget key={product.id} product={product} />
-            ))}
+          <div className="relative md:px-0">
+            <button type="button" aria-label="Produsul anterior" className="mobile-carousel-arrow absolute left-0 top-1/2 z-20 -translate-y-1/2 rounded-full bg-accent p-2 text-accent-foreground shadow-lg md:hidden" onClick={() => document.querySelector('.mobile-product-track')?.scrollBy({ left: -260, behavior: 'smooth' })}>
+              <ChevronLeft className="h-5 w-5" />
+            </button>
+            <div className="mobile-product-track grid grid-cols-1 gap-8 md:grid md:grid-cols-3 md:gap-8">
+              {regularProducts.map((product) => (
+                <ProductWidget key={product.id} product={product} />
+              ))}
+            </div>
+            <button type="button" aria-label="Urmatorul produs" className="mobile-carousel-arrow absolute right-0 top-1/2 z-20 -translate-y-1/2 rounded-full bg-accent p-2 text-accent-foreground shadow-lg md:hidden" onClick={() => document.querySelector('.mobile-product-track')?.scrollBy({ left: 260, behavior: 'smooth' })}>
+              <ChevronRight className="h-5 w-5" />
+            </button>
           </div>
         </div>
       </section>
 
       {/* Why Yaboo Section with Bundle */}
-      <section className="py-20 bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              De ce Yaboo?
+<section className="yellow-spotlight py-20 bg-background">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl md:text-4xl font-bold text-accent mb-4 drop-shadow-[0_0_18px_rgba(250,204,21,0.28)]">
+                  De ce Yaboo?
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               Biltong-ul nostru este preparat cu pasiune, dupa retete autentice sud-africane.
@@ -445,27 +452,27 @@ export default function HomePage() {
               { title: "Fara aditivi", desc: "100% natural, fara conservanti" },
               { title: "Produs local", desc: "Fabricat in Romania cu dragoste" },
             ].map((item, i) => (
-              <div key={i} className="text-center p-6 bg-muted rounded-xl border border-border">
-                <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-4">
-                  <span className="text-xl font-bold text-accent">{i + 1}</span>
-                </div>
-                <h3 className="font-semibold text-foreground mb-2">{item.title}</h3>
-                <p className="text-muted-foreground text-sm">{item.desc}</p>
+              <div key={i} className="widget-hover text-center p-6 bg-accent rounded-xl border-0 transition-all duration-300 hover:scale-[1.06] hover:shadow-2xl hover:shadow-accent/30">
+<div className="w-12 h-12 rounded-full bg-black flex items-center justify-center mx-auto mb-4">
+	                  <span className="text-xl font-bold text-white">{i + 1}</span>
+	                </div>
+	                <h3 className="font-semibold text-black mb-2">{item.title}</h3>
+                <p className="text-black/75 text-sm">{item.desc}</p>
               </div>
             ))}
           </div>
 
           {/* Bundle Product Widget */}
           {bundleProduct && (
-            <div className="max-w-2xl mx-auto">
-              <div className="text-center mb-8">
-                <h3 className="text-2xl font-bold text-foreground">Nu stii ce sa alegi?</h3>
+            <div className="max-w-2xl mx-auto px-1 sm:px-0">
+              <div className="text-center mb-5 sm:mb-8">
+                <h3 className="text-xl sm:text-2xl font-bold text-foreground">Nu stii ce sa alegi?</h3>
                 <p className="text-muted-foreground">Incearca toate aromele cu pachetul nostru special!</p>
               </div>
               <Link href={`/product/${bundleProduct.id}`} className="block group">
                 <div className="bg-secondary text-secondary-foreground rounded-2xl overflow-hidden transition-transform duration-300 group-hover:scale-[1.02]">
                   <div className="grid grid-cols-1 md:grid-cols-2">
-                    <div className="relative aspect-square bg-gradient-to-br from-accent/20 to-transparent p-8 flex items-center justify-center">
+                    <div className="relative aspect-[1.15] sm:aspect-square bg-gradient-to-br from-accent/20 to-transparent p-4 sm:p-8 flex items-center justify-center">
                       <Image
                         src={bundleProduct.image}
                         alt={bundleProduct.name}
@@ -514,8 +521,8 @@ export default function HomePage() {
       <section className="py-20 bg-muted">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Yaboo! vs Competitia
+            <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
+              <span className="text-black">Yaboo!</span> <span className="text-black">vs</span> <span className="text-black">Competitia</span>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               De ce sa alegi Yaboo! in locul altor snack-uri proteice de pe piata?
@@ -557,7 +564,7 @@ export default function HomePage() {
             </div>
 
             {/* Competition Column */}
-            <div className="bg-background rounded-2xl p-8 border border-border">
+            <div className="hidden md:block bg-background rounded-2xl p-8 border border-border">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-12 h-12 rounded-lg bg-muted flex items-center justify-center">
                   <span className="text-muted-foreground font-bold">?</span>

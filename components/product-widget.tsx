@@ -19,7 +19,7 @@ export function ProductWidget({ product }: ProductWidgetProps) {
 
   return (
     <Link href={`/product/${product.id}`}>
-      <div className="bg-secondary text-secondary-foreground rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all group hover:scale-[1.02]">
+      <div className="widget-hover bg-secondary text-secondary-foreground rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group hover:scale-[1.04]">
         {/* Product Image */}
         <div className="relative h-56 overflow-hidden">
           <Image
@@ -65,12 +65,12 @@ export function ProductWidget({ product }: ProductWidgetProps) {
             <Button 
               onClick={handleAddToCart}
               variant="outline" 
-              className="flex-1 border-secondary-foreground/30 text-secondary-foreground hover:bg-secondary-foreground/10"
+              className="hover-expand-button flex-1 border-secondary-foreground/30 text-secondary-foreground hover:bg-secondary-foreground/10"
             >
               <ShoppingCart className="w-4 h-4 mr-2" />
               Adauga
             </Button>
-            <Button className="flex-1 bg-accent text-accent-foreground hover:bg-accent/90">
+            <Button className="hover-expand-button flex-1 bg-accent text-accent-foreground hover:bg-accent/90">
               Detalii
               <ArrowRight className="w-4 h-4 ml-2" />
             </Button>
