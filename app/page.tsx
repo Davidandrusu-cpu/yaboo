@@ -277,8 +277,7 @@ export default function HomePage() {
 
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground text-balance">
                 Ti-e foame?{" "}
-                <span className="text-accent">Yaboo!</span>{" "}
-                e aici pentru tine.
+                <span className="text-accent">Ya boo!</span>
               </h1>
 
               <p className="text-lg md:text-xl text-white/95 text-pretty drop-shadow-[0_3px_12px_rgba(0,0,0,0.95)]">
