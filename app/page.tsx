@@ -264,7 +264,7 @@ export default function HomePage() {
       <section
         className="hero-stage relative overflow-hidden"
         style={{
-          backgroundImage: 'radial-gradient(circle at 12% 18%, rgba(250,204,21,.2), transparent 22rem), radial-gradient(circle at 92% 82%, rgba(250,204,21,.16), transparent 20rem), linear-gradient(90deg, rgba(0,0,0,.92), rgba(0,0,0,.66)), url("https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-10-28%20at%2015.07.09-rbkjAvZL3usTuiOpkUM9zpUj1uwQSH.png")',
+          backgroundImage: 'radial-gradient(circle at 50% 45%, rgba(250,204,21,.34), transparent 34rem), radial-gradient(circle at 8% 16%, rgba(250,204,21,.28), transparent 20rem), linear-gradient(90deg, rgba(0,0,0,.76), rgba(0,0,0,.38)), url("https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-10-28%20at%2015.07.09-rbkjAvZL3usTuiOpkUM9zpUj1uwQSH.png")',
         }}
       >
         <div className="hero-content relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
@@ -281,21 +281,21 @@ export default function HomePage() {
                 e aici pentru tine.
               </h1>
 
-              <p className="text-lg md:text-xl text-muted-foreground text-pretty">
+              <p className="text-lg md:text-xl text-white/95 text-pretty drop-shadow-[0_3px_12px_rgba(0,0,0,0.95)]">
                 Descopera biltong-ul autentic, preparat dupa retete traditionale sud-africane. 
                 Proteina pura, gust exceptional, 100% natural - snack-ul perfect pentru orice moment.
               </p>
 
               <div className="flex flex-wrap gap-4">
-                <div className="flex items-center gap-2 bg-muted px-4 py-2 rounded-full">
+                <div className="flex items-center gap-2 bg-black/75 border border-white/25 px-4 py-2 rounded-full shadow-lg">
                   <span className="w-2 h-2 rounded-full bg-accent" />
                   <span className="text-sm font-medium text-foreground">High Protein</span>
                 </div>
-                <div className="flex items-center gap-2 bg-muted px-4 py-2 rounded-full">
+                <div className="flex items-center gap-2 bg-black/75 border border-white/25 px-4 py-2 rounded-full shadow-lg">
                   <span className="w-2 h-2 rounded-full bg-accent" />
                   <span className="text-sm font-medium text-foreground">100% Natural</span>
                 </div>
-                <div className="flex items-center gap-2 bg-muted px-4 py-2 rounded-full">
+                <div className="flex items-center gap-2 bg-black/75 border border-white/25 px-4 py-2 rounded-full shadow-lg">
                   <span className="w-2 h-2 rounded-full bg-accent" />
                   <span className="text-sm font-medium text-foreground">Fara conservanti</span>
                 </div>
@@ -309,7 +309,7 @@ export default function HomePage() {
                   </Button>
                 </Link>
                 <Link href="/checkout">
-                  <Button size="lg" variant="outline" className="border-2 border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground w-full sm:w-auto font-semibold">
+                  <Button size="lg" variant="outline" className="border-2 border-white text-white bg-black/35 hover:bg-white hover:text-black w-full sm:w-auto font-semibold shadow-lg">
                     Comanda acum
                   </Button>
                 </Link>
@@ -318,7 +318,7 @@ export default function HomePage() {
 
             <div className="relative">
               <div className="hero-logo-frame relative aspect-square max-w-lg mx-auto">
-                <div className="absolute inset-0 rounded-3xl bg-black/70 shadow-2xl" />
+                <div className="absolute inset-0 rounded-3xl bg-black/35 shadow-2xl" />
                 <div className="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-accent/40 blur-3xl" />
                 <div className="absolute -bottom-8 -left-8 h-40 w-40 rounded-full bg-accent/25 blur-3xl" />
                 <Image

@@ -126,13 +126,28 @@
 
 .hero-stage {
   background-color: #050505;
-  background-image:
-    radial-gradient(circle at 12% 18%, rgba(250, 204, 21, 0.2), transparent 22rem),
-    radial-gradient(circle at 92% 82%, rgba(250, 204, 21, 0.16), transparent 20rem),
-    linear-gradient(90deg, rgba(0, 0, 0, 0.92), rgba(0, 0, 0, 0.66)),
-    url("https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-10-28%20at%2015.07.09-rbkjAvZL3usTuiOpkUM9zpUj1uwQSH.png");
   background-position: center;
   background-size: cover;
+  isolation: isolate;
+}
+
+.hero-stage .hero-content {
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.9);
+}
+
+.hero-stage .hero-content p,
+.hero-stage .hero-content h1 {
+  text-shadow: 0 3px 22px rgba(0, 0, 0, 0.95);
+}
+
+.hero-stage .hero-logo-frame {
+  background: radial-gradient(circle at center, rgba(250, 204, 21, 0.58), rgba(250, 204, 21, 0.18) 42%, rgba(0, 0, 0, 0.78) 76%);
+  border: 2px solid rgba(250, 204, 21, 0.72);
+  box-shadow: 0 0 80px rgba(250, 204, 21, 0.32), inset 0 0 70px rgba(250, 204, 21, 0.2);
+}
+
+.hero-stage .hero-logo-frame img {
+  filter: drop-shadow(0 5px 18px rgba(0, 0, 0, 0.95));
 }
 
 .hero-stage::before {
