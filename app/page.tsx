@@ -261,8 +261,13 @@ export default function HomePage() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative bg-background overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+      <section
+        className="hero-stage relative overflow-hidden"
+        style={{
+          backgroundImage: 'radial-gradient(circle at 50% 42%, rgba(250,204,21,.28), transparent 28rem), radial-gradient(circle at 82% 18%, rgba(250,204,21,.14), transparent 18rem), linear-gradient(180deg, #000000 0%, #050505 58%, #000000 100%)',
+        }}
+      >
+        <div className="hero-content relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
               <div className="inline-flex items-center gap-2 bg-accent/10 text-accent px-4 py-2 rounded-full">
@@ -276,21 +281,21 @@ export default function HomePage() {
                 e aici pentru tine.
               </h1>
 
-              <p className="text-lg md:text-xl text-muted-foreground text-pretty">
+              <p className="text-lg md:text-xl text-white/95 text-pretty drop-shadow-[0_3px_12px_rgba(0,0,0,0.95)]">
                 Descopera biltong-ul autentic, preparat dupa retete traditionale sud-africane. 
                 Proteina pura, gust exceptional, 100% natural - snack-ul perfect pentru orice moment.
               </p>
 
               <div className="flex flex-wrap gap-4">
-                <div className="flex items-center gap-2 bg-muted px-4 py-2 rounded-full">
+                <div className="flex items-center gap-2 bg-black/75 border border-white/25 px-4 py-2 rounded-full shadow-lg">
                   <span className="w-2 h-2 rounded-full bg-accent" />
                   <span className="text-sm font-medium text-foreground">High Protein</span>
                 </div>
-                <div className="flex items-center gap-2 bg-muted px-4 py-2 rounded-full">
+                <div className="flex items-center gap-2 bg-black/75 border border-white/25 px-4 py-2 rounded-full shadow-lg">
                   <span className="w-2 h-2 rounded-full bg-accent" />
                   <span className="text-sm font-medium text-foreground">100% Natural</span>
                 </div>
-                <div className="flex items-center gap-2 bg-muted px-4 py-2 rounded-full">
+                <div className="flex items-center gap-2 bg-black/75 border border-white/25 px-4 py-2 rounded-full shadow-lg">
                   <span className="w-2 h-2 rounded-full bg-accent" />
                   <span className="text-sm font-medium text-foreground">Fara conservanti</span>
                 </div>
@@ -304,7 +309,7 @@ export default function HomePage() {
                   </Button>
                 </Link>
                 <Link href="/checkout">
-                  <Button size="lg" variant="outline" className="border-2 border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground w-full sm:w-auto font-semibold">
+                  <Button size="lg" variant="outline" className="border-2 border-white text-white bg-black/35 hover:bg-white hover:text-black w-full sm:w-auto font-semibold shadow-lg">
                     Comanda acum
                   </Button>
                 </Link>
@@ -312,8 +317,10 @@ export default function HomePage() {
             </div>
 
             <div className="relative">
-              <div className="relative aspect-square max-w-lg mx-auto">
-                <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-secondary/10 rounded-3xl" />
+              <div className="hero-logo-frame relative aspect-square max-w-lg mx-auto">
+                <div className="absolute inset-0 rounded-3xl bg-black/35 shadow-2xl" />
+                <div className="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-accent/40 blur-3xl" />
+                <div className="absolute -bottom-8 -left-8 h-40 w-40 rounded-full bg-accent/25 blur-3xl" />
                 <Image
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Logo%20Yaboo%21%20alb%20%281%29-5fzTBUY5P9JTlGEH3Gz5yyxkb6VWkO.png"
                   alt="Yaboo! Logo"
