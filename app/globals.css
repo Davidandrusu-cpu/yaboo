@@ -142,7 +142,7 @@
 
 .hero-stage .hero-logo-frame {
   background: radial-gradient(circle at center, rgba(250, 204, 21, 0.58), rgba(250, 204, 21, 0.18) 42%, rgba(0, 0, 0, 0.78) 76%);
-  border: 2px solid rgba(250, 204, 21, 0.72);
+  border: 0;
   box-shadow: 0 0 80px rgba(250, 204, 21, 0.32), inset 0 0 70px rgba(250, 204, 21, 0.2);
 }
 
@@ -166,6 +166,16 @@
 
 .widget-hover {
   transform-origin: center;
+}
+
+.hover-expand-button {
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+}
+
+.hover-expand-button:hover {
+  transform: scale(1.06);
+  border-color: #facc15 !important;
+  box-shadow: 0 0 0 2px #facc15, 0 0 22px rgba(250, 204, 21, 0.42);
 }
 
 .segmented-slider {

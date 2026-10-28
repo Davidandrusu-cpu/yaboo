@@ -303,13 +303,13 @@ export default function HomePage() {
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="#products">
-                  <Button size="lg" className="bg-secondary text-secondary-foreground hover:bg-secondary/90 w-full sm:w-auto font-semibold">
+                  <Button size="lg" className="hover-expand-button bg-secondary text-secondary-foreground hover:bg-secondary/90 w-full sm:w-auto font-semibold">
                     Vezi produsele
                     <ArrowRight className="w-5 h-5 ml-2" />
                   </Button>
                 </Link>
                 <Link href="/checkout">
-                  <Button size="lg" variant="outline" className="border-2 border-white text-white bg-black/35 hover:bg-white hover:text-black w-full sm:w-auto font-semibold shadow-lg">
+                  <Button size="lg" variant="outline" className="hover-expand-button border-2 border-white text-white bg-black/35 hover:bg-white hover:text-black w-full sm:w-auto font-semibold shadow-lg">
                     Comanda acum
                   </Button>
                 </Link>
@@ -514,8 +514,8 @@ export default function HomePage() {
       <section className="py-20 bg-muted">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-accent mb-4 drop-shadow-[0_0_18px_rgba(250,204,21,0.28)]">
-              <span className="text-accent">Yaboo!</span> <span className="text-foreground">vs</span> <span className="text-yellow-300">Competitia</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
+              <span className="text-black">Yaboo!</span> <span className="text-black">vs</span> <span className="text-black">Competitia</span>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               De ce sa alegi Yaboo! in locul altor snack-uri proteice de pe piata?
