@@ -264,7 +264,7 @@ export default function HomePage() {
       <section
         className="hero-stage relative overflow-hidden"
         style={{
-          backgroundImage: 'radial-gradient(circle at 50% 45%, rgba(250,204,21,.34), transparent 34rem), radial-gradient(circle at 8% 16%, rgba(250,204,21,.28), transparent 20rem), linear-gradient(90deg, rgba(0,0,0,.76), rgba(0,0,0,.38)), url("https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-10-28%20at%2015.07.09-rbkjAvZL3usTuiOpkUM9zpUj1uwQSH.png")',
+          backgroundImage: 'radial-gradient(circle at 50% 42%, rgba(250,204,21,.28), transparent 28rem), radial-gradient(circle at 82% 18%, rgba(250,204,21,.14), transparent 18rem), linear-gradient(180deg, #000000 0%, #050505 58%, #000000 100%)',
         }}
       >
         <div className="hero-content relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
