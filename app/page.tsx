@@ -81,7 +81,7 @@ function NewsletterWidget() {
   }
 
   return (
-    <div className="bg-gradient-to-br from-muted to-muted/50 rounded-2xl p-8 md:p-12 border border-border">
+    <div className="widget-hover bg-gradient-to-br from-muted to-muted/50 rounded-2xl p-8 md:p-12 border border-border">
       <div className="max-w-2xl mx-auto text-center">
         <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-accent/10 mb-6">
           <Mail className="w-7 h-7 text-accent" />
@@ -161,7 +161,7 @@ function SubscriptionWidget() {
   }
 
   return (
-    <div className="bg-secondary text-secondary-foreground rounded-2xl p-8 md:p-12">
+    <div className="widget-hover bg-secondary text-secondary-foreground rounded-2xl p-8 md:p-12">
       <div className="max-w-3xl mx-auto">
         <div className="text-center mb-8">
           <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-accent/20 mb-6">
@@ -303,7 +303,7 @@ export default function HomePage() {
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="#products">
-                  <Button size="lg" className="hover-expand-button bg-secondary text-secondary-foreground hover:bg-secondary/90 w-full sm:w-auto font-semibold">
+                  <Button size="lg" className="hover-expand-button border-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/90 w-full sm:w-auto font-semibold">
                     Vezi produsele
                     <ArrowRight className="w-5 h-5 ml-2" />
                   </Button>
@@ -318,7 +318,7 @@ export default function HomePage() {
 
             <div className="relative">
               <div className="hero-logo-frame relative aspect-square max-w-lg mx-auto">
-                <div className="absolute inset-0 rounded-3xl bg-black/35 shadow-2xl" />
+                <div className="absolute inset-0 rounded-3xl shadow-2xl" />
                 <div className="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-accent/40 blur-3xl" />
                 <div className="absolute -bottom-8 -left-8 h-40 w-40 rounded-full bg-accent/25 blur-3xl" />
                 <Image
@@ -354,7 +354,7 @@ export default function HomePage() {
       <section className="py-12 bg-muted">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="flex items-center gap-4 p-6 rounded-xl bg-background border border-border">
+            <div className="widget-hover flex items-center gap-4 p-6 rounded-xl bg-background border border-border transition-all duration-300">
               <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center shrink-0">
                 <Zap className="w-6 h-6 text-accent" />
               </div>
@@ -363,7 +363,7 @@ export default function HomePage() {
                 <p className="text-muted-foreground text-sm">Sursa excelenta de proteine naturale</p>
               </div>
             </div>
-            <div className="flex items-center gap-4 p-6 rounded-xl bg-background border border-border">
+            <div className="widget-hover flex items-center gap-4 p-6 rounded-xl bg-background border border-border transition-all duration-300">
               <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center shrink-0">
                 <Truck className="w-6 h-6 text-accent" />
               </div>
@@ -372,7 +372,7 @@ export default function HomePage() {
                 <p className="text-muted-foreground text-sm">In toata Romania, in 24-48h</p>
               </div>
             </div>
-            <div className="flex items-center gap-4 p-6 rounded-xl bg-background border border-border">
+            <div className="widget-hover flex items-center gap-4 p-6 rounded-xl bg-background border border-border transition-all duration-300">
               <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center shrink-0">
                 <Shield className="w-6 h-6 text-accent" />
               </div>

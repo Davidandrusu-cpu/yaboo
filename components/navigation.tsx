@@ -81,9 +81,9 @@ export function Navigation() {
             <Image
               src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Logo%20Yaboo%21%20alb%20%281%29-5fzTBUY5P9JTlGEH3Gz5yyxkb6VWkO.png"
               alt="Yaboo! Logo"
-              width={120}
-              height={60}
-              className="h-14 w-auto"
+              width={156}
+              height={72}
+              className="h-16 w-auto"
             />
           </Link>
 
