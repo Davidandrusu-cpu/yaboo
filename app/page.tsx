@@ -464,15 +464,15 @@ export default function HomePage() {
 
           {/* Bundle Product Widget */}
           {bundleProduct && (
-            <div className="max-w-2xl mx-auto">
-              <div className="text-center mb-8">
-                <h3 className="text-2xl font-bold text-foreground">Nu stii ce sa alegi?</h3>
+            <div className="max-w-2xl mx-auto px-1 sm:px-0">
+              <div className="text-center mb-5 sm:mb-8">
+                <h3 className="text-xl sm:text-2xl font-bold text-foreground">Nu stii ce sa alegi?</h3>
                 <p className="text-muted-foreground">Incearca toate aromele cu pachetul nostru special!</p>
               </div>
               <Link href={`/product/${bundleProduct.id}`} className="block group">
                 <div className="bg-secondary text-secondary-foreground rounded-2xl overflow-hidden transition-transform duration-300 group-hover:scale-[1.02]">
                   <div className="grid grid-cols-1 md:grid-cols-2">
-                    <div className="relative aspect-square bg-gradient-to-br from-accent/20 to-transparent p-8 flex items-center justify-center">
+                    <div className="relative aspect-[1.15] sm:aspect-square bg-gradient-to-br from-accent/20 to-transparent p-4 sm:p-8 flex items-center justify-center">
                       <Image
                         src={bundleProduct.image}
                         alt={bundleProduct.name}
@@ -564,7 +564,7 @@ export default function HomePage() {
             </div>
 
             {/* Competition Column */}
-            <div className="bg-background rounded-2xl p-8 border border-border">
+            <div className="hidden md:block bg-background rounded-2xl p-8 border border-border">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-12 h-12 rounded-lg bg-muted flex items-center justify-center">
                   <span className="text-muted-foreground font-bold">?</span>
