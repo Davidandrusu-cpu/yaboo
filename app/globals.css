@@ -157,9 +157,9 @@
 }
 
 .hero-stage .hero-logo-frame {
-  background: radial-gradient(circle at center, rgba(250, 204, 21, 0.58), rgba(250, 204, 21, 0.18) 42%, rgba(0, 0, 0, 0.78) 76%);
+  background: transparent;
   border: 0;
-  box-shadow: 0 0 80px rgba(250, 204, 21, 0.24), inset 0 0 70px rgba(250, 204, 21, 0.12);
+  box-shadow: none;
 }
 
 .hero-stage .hero-logo-frame img {

@@ -317,8 +317,7 @@ export default function HomePage() {
             </div>
 
             <div className="relative">
-              <div className="hero-logo-frame relative aspect-square max-w-lg mx-auto">
-                <div className="absolute inset-0 rounded-3xl shadow-2xl" />
+              <div className="hero-logo-frame relative aspect-square max-w-lg mx-auto" style={{ background: "transparent", boxShadow: "none" }}>
                 <div className="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-accent/40 blur-3xl" />
                 <div className="absolute -bottom-8 -left-8 h-40 w-40 rounded-full bg-accent/25 blur-3xl" />
                 <Image
@@ -445,7 +444,7 @@ export default function HomePage() {
               { title: "Fara aditivi", desc: "100% natural, fara conservanti" },
               { title: "Produs local", desc: "Fabricat in Romania cu dragoste" },
             ].map((item, i) => (
-              <div key={i} className="widget-hover text-center p-6 bg-accent rounded-xl border-2 border-accent transition-all duration-300 hover:scale-[1.06] hover:border-white hover:shadow-2xl hover:shadow-accent/30">
+              <div key={i} className="widget-hover text-center p-6 bg-accent rounded-xl border-0 transition-all duration-300 hover:scale-[1.06] hover:shadow-2xl hover:shadow-accent/30">
 <div className="w-12 h-12 rounded-full bg-black flex items-center justify-center mx-auto mb-4">
 	                  <span className="text-xl font-bold text-white">{i + 1}</span>
 	                </div>
