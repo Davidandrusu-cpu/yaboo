@@ -261,8 +261,13 @@ export default function HomePage() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative bg-background overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+      <section
+        className="hero-stage relative overflow-hidden"
+        style={{
+          backgroundImage: 'radial-gradient(circle at 12% 18%, rgba(250,204,21,.2), transparent 22rem), radial-gradient(circle at 92% 82%, rgba(250,204,21,.16), transparent 20rem), linear-gradient(90deg, rgba(0,0,0,.92), rgba(0,0,0,.66)), url("https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-10-28%20at%2015.07.09-rbkjAvZL3usTuiOpkUM9zpUj1uwQSH.png")',
+        }}
+      >
+        <div className="hero-content relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
               <div className="inline-flex items-center gap-2 bg-accent/10 text-accent px-4 py-2 rounded-full">
@@ -312,8 +317,10 @@ export default function HomePage() {
             </div>
 
             <div className="relative">
-              <div className="relative aspect-square max-w-lg mx-auto">
-                <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-secondary/10 rounded-3xl" />
+              <div className="hero-logo-frame relative aspect-square max-w-lg mx-auto">
+                <div className="absolute inset-0 rounded-3xl bg-black/70 shadow-2xl" />
+                <div className="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-accent/40 blur-3xl" />
+                <div className="absolute -bottom-8 -left-8 h-40 w-40 rounded-full bg-accent/25 blur-3xl" />
                 <Image
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Logo%20Yaboo%21%20alb%20%281%29-5fzTBUY5P9JTlGEH3Gz5yyxkb6VWkO.png"
                   alt="Yaboo! Logo"

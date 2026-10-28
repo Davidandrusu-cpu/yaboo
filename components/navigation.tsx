@@ -68,7 +68,12 @@ export function Navigation() {
   const totalPrice = cart.reduce((sum, item) => sum + (item.product.price * item.quantity), 0)
 
   return (
-    <nav className="sticky top-0 z-50 bg-background border-b border-border">
+    <nav
+      className="pattern-header sticky top-0 z-50 border-b border-accent/50"
+      style={{
+        backgroundImage: 'linear-gradient(90deg, rgba(0,0,0,.86), rgba(0,0,0,.62)), url("https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-10-28%20at%2015.07.09-rbkjAvZL3usTuiOpkUM9zpUj1uwQSH.png")',
+      }}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}

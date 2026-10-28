@@ -115,6 +115,34 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
+.pattern-header {
+  background-color: #090909;
+  background-image:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.86), rgba(0, 0, 0, 0.62)),
+    url("https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-10-28%20at%2015.07.09-rbkjAvZL3usTuiOpkUM9zpUj1uwQSH.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.hero-stage {
+  background-color: #050505;
+  background-image:
+    radial-gradient(circle at 12% 18%, rgba(250, 204, 21, 0.2), transparent 22rem),
+    radial-gradient(circle at 92% 82%, rgba(250, 204, 21, 0.16), transparent 20rem),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.92), rgba(0, 0, 0, 0.66)),
+    url("https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-10-28%20at%2015.07.09-rbkjAvZL3usTuiOpkUM9zpUj1uwQSH.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.hero-stage::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent 35%, rgba(250, 204, 21, 0.1) 50%, transparent 65%);
+  pointer-events: none;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
