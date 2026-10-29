@@ -204,6 +204,8 @@
   .feature-widget > div:last-child {
     position: static;
     z-index: auto;
+    flex: 1;
+    min-width: 0;
   }
 }
 

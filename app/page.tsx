@@ -376,7 +376,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 gap-3 md:gap-6">
             <div className="widget-hover feature-widget relative min-w-[82%] snap-center flex items-center gap-3 p-4 rounded-xl bg-background border border-border transition-all duration-300 md:min-w-0 md:gap-4 md:p-6">
-              <div className="absolute right-2 top-1/2 -translate-y-1/2 w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center opacity-20 pointer-events-none">
+              <div className="absolute right-2 top-1/2 -translate-y-1/2 shrink-0 w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center opacity-20 pointer-events-none">
                 <Zap className="w-6 h-6 text-accent" />
               </div>
               <div>
@@ -385,7 +385,7 @@ export default function HomePage() {
               </div>
             </div>
             <div className="widget-hover feature-widget relative min-w-[82%] snap-center flex items-center gap-3 p-4 rounded-xl bg-background border border-border transition-all duration-300 md:min-w-0 md:gap-4 md:p-6">
-              <div className="absolute right-2 top-1/2 -translate-y-1/2 w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center opacity-20 pointer-events-none">
+              <div className="absolute right-2 top-1/2 -translate-y-1/2 shrink-0 w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center opacity-20 pointer-events-none">
                 <Truck className="w-6 h-6 text-accent" />
               </div>
               <div>
@@ -394,7 +394,7 @@ export default function HomePage() {
               </div>
             </div>
             <div className="widget-hover feature-widget relative min-w-[82%] snap-center flex items-center gap-3 p-4 rounded-xl bg-background border border-border transition-all duration-300 md:min-w-0 md:gap-4 md:p-6">
-              <div className="absolute right-2 top-1/2 -translate-y-1/2 w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center opacity-20 pointer-events-none">
+              <div className="absolute right-2 top-1/2 -translate-y-1/2 shrink-0 w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center opacity-20 pointer-events-none">
                 <Shield className="w-6 h-6 text-accent" />
               </div>
               <div>
@@ -403,7 +403,7 @@ export default function HomePage() {
               </div>
             </div>
             <div className="widget-hover feature-widget relative min-w-[82%] snap-center flex items-center gap-3 p-4 rounded-xl bg-background border border-border transition-all duration-300 md:min-w-0 md:gap-4 md:p-6">
-              <div className="absolute right-2 top-1/2 -translate-y-1/2 w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center opacity-20 pointer-events-none">
+              <div className="absolute right-2 top-1/2 -translate-y-1/2 shrink-0 w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center opacity-20 pointer-events-none">
                 <Heart className="w-6 h-6 text-accent" />
               </div>
               <div>
