@@ -380,7 +380,8 @@ export default function HomePage() {
                 <Zap className="w-6 h-6 text-accent" />
               </div>
               <div>
-                <h3 className="relative z-10 min-w-0 text-xs leading-tight font-semibold text-foreground">High Protein</h3>
+                <h3 className="relative z-10 min-w-0 text-xs leading-tight font-semibold text-foreground md:text-base">High Protein</h3>
+              <p className="hidden text-sm text-muted-foreground md:block">Sursa excelenta de proteine naturale</p>
               </div>
             </div>
             <div className="widget-hover feature-widget relative min-w-[82%] snap-center flex items-center gap-3 p-4 rounded-xl bg-background border border-border transition-all duration-300 md:min-w-0 md:gap-4 md:p-6">
@@ -388,7 +389,8 @@ export default function HomePage() {
                 <Truck className="w-6 h-6 text-accent" />
               </div>
               <div>
-                <h3 className="relative z-10 min-w-0 text-xs leading-tight font-semibold text-foreground">Livrare rapida</h3>
+                <h3 className="relative z-10 min-w-0 text-xs leading-tight font-semibold text-foreground md:text-base">Livrare rapida</h3>
+              <p className="hidden text-sm text-muted-foreground md:block">In toata Romania, in 24-48h</p>
               </div>
             </div>
             <div className="widget-hover feature-widget relative min-w-[82%] snap-center flex items-center gap-3 p-4 rounded-xl bg-background border border-border transition-all duration-300 md:min-w-0 md:gap-4 md:p-6">
@@ -396,7 +398,8 @@ export default function HomePage() {
                 <Shield className="w-6 h-6 text-accent" />
               </div>
               <div>
-                <h3 className="relative z-10 min-w-0 text-xs leading-tight font-semibold text-foreground">100% Natural</h3>
+                <h3 className="relative z-10 min-w-0 text-xs leading-tight font-semibold text-foreground md:text-base">100% Natural</h3>
+              <p className="hidden text-sm text-muted-foreground md:block">Fara conservanti sau aditivi</p>
               </div>
             </div>
             <div className="widget-hover feature-widget relative min-w-[82%] snap-center flex items-center gap-3 p-4 rounded-xl bg-background border border-border transition-all duration-300 md:min-w-0 md:gap-4 md:p-6">
@@ -404,7 +407,8 @@ export default function HomePage() {
                 <Heart className="w-6 h-6 text-accent" />
               </div>
               <div>
-                <h3 className="relative z-10 min-w-0 text-xs leading-tight font-semibold text-foreground">Carne 100% romaneasca</h3>
+                <h3 className="relative z-10 min-w-0 text-xs leading-tight font-semibold text-foreground md:text-base">Carne 100% romaneasca</h3>
+              <p className="hidden text-sm text-muted-foreground md:block">Selectata de la producatori locali</p>
               </div>
             </div>
           </div>
