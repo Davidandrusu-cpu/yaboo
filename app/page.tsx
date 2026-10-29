@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { ArrowRight, ChevronLeft, ChevronRight, Zap, Truck, Shield, Timer, Gift, Mail, Check, X, Package } from "lucide-react"
+import { ArrowRight, ChevronLeft, ChevronRight, Zap, Truck, Shield, Timer, Gift, Mail, Check, X, Package, Heart } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Navigation } from "@/components/navigation"
@@ -377,6 +377,15 @@ export default function HomePage() {
               <div>
                 <h3 className="font-semibold text-foreground">100% Natural</h3>
                 <p className="text-muted-foreground text-sm">Fara conservanti sau aditivi</p>
+              </div>
+            </div>
+            <div className="widget-hover min-w-[82%] snap-center flex items-center gap-3 p-4 rounded-xl bg-background border border-border transition-all duration-300 md:min-w-0 md:gap-4 md:p-6">
+              <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center shrink-0">
+                <Heart className="w-6 h-6 text-accent" />
+              </div>
+              <div>
+                <h3 className="font-semibold text-foreground">Carne 100% romaneasca</h3>
+                <p className="text-muted-foreground text-sm">Selectata de la producatori locali</p>
               </div>
             </div>
           </div>
