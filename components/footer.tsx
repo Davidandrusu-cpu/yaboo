@@ -80,7 +80,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-secondary-foreground/20 mt-8 pt-8 text-center text-secondary-foreground/60 text-sm">
-          <p>&copy; {new Date().getFullYear()} Yaboo SRL. Toate drepturile rezervate.</p>
+          <p>&copy; {new Date().getFullYear()} Aruda Management SRL. Toate drepturile rezervate.</p>
         </div>
       </div>
     </footer>
