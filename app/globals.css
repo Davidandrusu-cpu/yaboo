@@ -201,7 +201,8 @@
   .feature-widget > div:first-child {
     position: static !important;
     opacity: 1 !important;
-    transform: translateY(0.8rem) !important;
+    align-self: center !important;
+    transform: none !important;
     pointer-events: auto;
   }
 
