@@ -202,7 +202,7 @@
     position: static !important;
     opacity: 1 !important;
     align-self: center !important;
-    transform: none !important;
+    transform: translateY(1.6rem) !important;
     pointer-events: auto;
   }
 
