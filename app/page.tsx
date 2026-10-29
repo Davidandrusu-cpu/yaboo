@@ -444,13 +444,14 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-            {[
-              { title: "Reteta traditionala", desc: "Preparat dupa metode autentice sud-africane" },
-              { title: "Ingrediente premium", desc: "Doar carne de vita romaneasca selectata" },
-              { title: "Fara aditivi", desc: "100% natural, fara conservanti" },
-              { title: "Produs local", desc: "Fabricat in Romania cu dragoste" },
-            ].map((item, i) => (
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 mb-16">
+  {[
+  { title: "Reteta traditionala", desc: "Preparat dupa metode autentice sud-africane" },
+  { title: "Ingrediente premium", desc: "Doar carne de vita romaneasca selectata" },
+  { title: "Fara aditivi", desc: "100% natural, fara conservanti" },
+  { title: "Produs local", desc: "Fabricat in Romania cu dragoste" },
+  { title: "Carne 100% romaneasca", desc: "Selectata de la producatori locali" },
+  ].map((item, i) => (
               <div key={i} className="widget-hover text-center p-6 bg-accent rounded-xl border-0 transition-all duration-300 hover:scale-[1.06] hover:shadow-2xl hover:shadow-accent/30">
 <div className="w-12 h-12 rounded-full bg-black flex items-center justify-center mx-auto mb-4">
 	                  <span className="text-xl font-bold text-white">{i + 1}</span>
