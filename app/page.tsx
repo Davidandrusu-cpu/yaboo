@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { ArrowRight, ChevronLeft, ChevronRight, Zap, Truck, Shield, Timer, Gift, Mail, Check, X, Package, Heart } from "lucide-react"
@@ -255,6 +255,29 @@ function SubscriptionWidget() {
 export default function HomePage() {
   const regularProducts = getAllProducts()
   const bundleProduct = getBundleProduct()
+  const whyCarouselRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const carousel = whyCarouselRef.current
+    if (!carousel) return
+
+    const interval = window.setInterval(() => {
+      if (window.innerWidth < 768) {
+        const nextCard = carousel.scrollLeft + carousel.clientWidth * 0.86
+        const maxScroll = carousel.scrollWidth - carousel.clientWidth
+        carousel.scrollTo({ left: nextCard > maxScroll ? 0 : nextCard, behavior: "smooth" })
+      }
+    }, 5000)
+
+    return () => window.clearInterval(interval)
+  }, [])
+
+  const scrollWhyCarousel = (direction: number) => {
+    whyCarouselRef.current?.scrollBy({
+      left: direction * (whyCarouselRef.current.clientWidth * 0.86),
+      behavior: "smooth",
+    })
+  }
 
   return (
     <div className="min-h-screen bg-background">
@@ -315,7 +338,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="relative order-1 lg:order-2">
+            <div className="relative order-1 lg:order-2 hidden md:block">
               <div className="hero-logo-frame relative aspect-square max-w-lg mx-auto" style={{ background: "transparent", boxShadow: "none" }}>
                 <div className="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-accent/40 blur-3xl" />
                 <div className="absolute -bottom-8 -left-8 h-40 w-40 rounded-full bg-accent/25 blur-3xl" />
@@ -358,7 +381,6 @@ export default function HomePage() {
               </div>
               <div>
                 <h3 className="font-semibold text-foreground">High Protein</h3>
-                <p className="text-muted-foreground text-sm">Sursa excelenta de proteine naturale</p>
               </div>
             </div>
             <div className="widget-hover min-w-[82%] snap-center flex items-center gap-3 p-4 rounded-xl bg-background border border-border transition-all duration-300 md:min-w-0 md:gap-4 md:p-6">
@@ -367,7 +389,6 @@ export default function HomePage() {
               </div>
               <div>
                 <h3 className="font-semibold text-foreground">Livrare rapida</h3>
-                <p className="text-muted-foreground text-sm">In toata Romania, in 24-48h</p>
               </div>
             </div>
             <div className="widget-hover min-w-[82%] snap-center flex items-center gap-3 p-4 rounded-xl bg-background border border-border transition-all duration-300 md:min-w-0 md:gap-4 md:p-6">
@@ -376,7 +397,6 @@ export default function HomePage() {
               </div>
               <div>
                 <h3 className="font-semibold text-foreground">100% Natural</h3>
-                <p className="text-muted-foreground text-sm">Fara conservanti sau aditivi</p>
               </div>
             </div>
             <div className="widget-hover min-w-[82%] snap-center flex items-center gap-3 p-4 rounded-xl bg-background border border-border transition-all duration-300 md:min-w-0 md:gap-4 md:p-6">
@@ -385,7 +405,6 @@ export default function HomePage() {
               </div>
               <div>
                 <h3 className="font-semibold text-foreground">Carne 100% romaneasca</h3>
-                <p className="text-muted-foreground text-sm">Selectata de la producatori locali</p>
               </div>
             </div>
           </div>
@@ -453,23 +472,31 @@ export default function HomePage() {
             </p>
           </div>
 
-  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 mb-16">
-  {[
-  { title: "Reteta traditionala", desc: "Preparat dupa metode autentice sud-africane" },
-  { title: "Ingrediente premium", desc: "Doar carne de vita romaneasca selectata" },
-  { title: "Fara aditivi", desc: "100% natural, fara conservanti" },
-  { title: "Produs local", desc: "Fabricat in Romania cu dragoste" },
-  { title: "Carne 100% romaneasca", desc: "Selectata de la producatori locali" },
-  ].map((item, i) => (
-              <div key={i} className="widget-hover text-center p-6 bg-accent rounded-xl border-0 transition-all duration-300 hover:scale-[1.06] hover:shadow-2xl hover:shadow-accent/30">
-<div className="w-12 h-12 rounded-full bg-black flex items-center justify-center mx-auto mb-4">
-	                  <span className="text-xl font-bold text-white">{i + 1}</span>
-	                </div>
-	                <h3 className="font-semibold text-black mb-2">{item.title}</h3>
-                <p className="text-black/75 text-sm">{item.desc}</p>
-              </div>
-            ))}
+  <div className="relative mb-16 md:static">
+    <button type="button" aria-label="Widgetul anterior" className="mobile-carousel-arrow absolute left-0 top-1/2 z-20 -translate-y-1/2 rounded-full bg-accent p-2 text-accent-foreground shadow-lg md:hidden" onClick={() => scrollWhyCarousel(-1)}>
+      <ChevronLeft className="h-5 w-5" />
+    </button>
+    <div ref={whyCarouselRef} className="mobile-why-carousel flex gap-4 overflow-x-auto snap-x snap-mandatory px-7 pb-2 scrollbar-hide md:grid md:grid-cols-2 md:gap-4 md:overflow-visible md:px-0 md:pb-0 lg:grid-cols-5">
+      {[
+        { title: "Reteta traditionala", desc: "Preparat dupa metode autentice sud-africane" },
+        { title: "Ingrediente premium", desc: "Doar carne de vita romaneasca selectata" },
+        { title: "Fara aditivi", desc: "100% natural, fara conservanti" },
+        { title: "Produs local", desc: "Fabricat in Romania cu dragoste" },
+        { title: "Carne 100% romaneasca", desc: "Selectata de la producatori locali" },
+      ].map((item, i) => (
+        <div key={i} className="widget-hover min-w-[86%] snap-center text-center p-6 bg-accent rounded-xl border-0 transition-all duration-300 hover:scale-[1.06] hover:shadow-2xl hover:shadow-accent/30 md:min-w-0">
+          <div className="w-12 h-12 rounded-full bg-black flex items-center justify-center mx-auto mb-4">
+            <span className="text-xl font-bold text-white">{i + 1}</span>
           </div>
+          <h3 className="font-semibold text-black mb-2">{item.title}</h3>
+          <p className="text-black/75 text-sm">{item.desc}</p>
+        </div>
+      ))}
+    </div>
+    <button type="button" aria-label="Widgetul urmator" className="mobile-carousel-arrow absolute right-0 top-1/2 z-20 -translate-y-1/2 rounded-full bg-accent p-2 text-accent-foreground shadow-lg md:hidden" onClick={() => scrollWhyCarousel(1)}>
+      <ChevronRight className="h-5 w-5" />
+    </button>
+  </div>
 
           {/* Bundle Product Widget */}
           {bundleProduct && (
