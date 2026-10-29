@@ -425,7 +425,7 @@ export default function HomePage() {
                 pastreaza textura frageda si gustul bogat. La Yaboo!, folosim o metoda de productie artizanala: 
                 selectam manual cele mai fine bucati de carne, le marinam in otet si condimente naturale timp de 24 de ore, 
                 apoi le uscam lent la temperatura controlata timp de 5-7 zile. Rezultatul? Un snack bogat in proteine, 
-                fara zahar adaugat si fara conservanti - exact asa cum se facea acum sute de ani.
+                fara zahar adaugat si fara conservanti!
               </p>
             </div>
           </div>
