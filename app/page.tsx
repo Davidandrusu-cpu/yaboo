@@ -1,9 +1,9 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { ArrowRight, ChevronLeft, ChevronRight, Zap, Truck, Shield, Timer, Gift, Mail, Check, X, Package } from "lucide-react"
+import { ArrowRight, ChevronLeft, ChevronRight, Zap, Truck, Shield, Timer, Gift, Mail, Check, X, Package, Heart } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Navigation } from "@/components/navigation"
@@ -255,6 +255,29 @@ function SubscriptionWidget() {
 export default function HomePage() {
   const regularProducts = getAllProducts()
   const bundleProduct = getBundleProduct()
+  const whyCarouselRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const carousel = whyCarouselRef.current
+    if (!carousel) return
+
+    const interval = window.setInterval(() => {
+      if (window.innerWidth < 768) {
+        const nextCard = carousel.scrollLeft + carousel.clientWidth * 0.86
+        const maxScroll = carousel.scrollWidth - carousel.clientWidth
+        carousel.scrollTo({ left: nextCard > maxScroll ? 0 : nextCard, behavior: "smooth" })
+      }
+    }, 5000)
+
+    return () => window.clearInterval(interval)
+  }, [])
+
+  const scrollWhyCarousel = (direction: number) => {
+    whyCarouselRef.current?.scrollBy({
+      left: direction * (whyCarouselRef.current.clientWidth * 0.86),
+      behavior: "smooth",
+    })
+  }
 
   return (
     <div className="min-h-screen bg-background">
@@ -277,8 +300,7 @@ export default function HomePage() {
 
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground text-balance">
                 Ti-e foame?{" "}
-                <span className="text-accent">Yaboo!</span>{" "}
-                e aici pentru tine.
+                <span className="text-accent">Yeah boo!</span>
               </h1>
 
               <p className="text-lg md:text-xl text-white/95 text-pretty drop-shadow-[0_3px_12px_rgba(0,0,0,0.95)]">
@@ -316,7 +338,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="relative order-1 lg:order-2">
+            <div className="relative order-1 lg:order-2 hidden md:block">
               <div className="hero-logo-frame relative aspect-square max-w-lg mx-auto" style={{ background: "transparent", boxShadow: "none" }}>
                 <div className="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-accent/40 blur-3xl" />
                 <div className="absolute -bottom-8 -left-8 h-40 w-40 rounded-full bg-accent/25 blur-3xl" />
@@ -352,32 +374,41 @@ export default function HomePage() {
       {/* Features */}
       <section className="py-12 bg-muted">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex gap-3 overflow-x-auto snap-x snap-mandatory scrollbar-hide md:grid md:grid-cols-3 md:gap-6">
-            <div className="widget-hover min-w-[82%] snap-center flex items-center gap-3 p-4 rounded-xl bg-background border border-border transition-all duration-300 md:min-w-0 md:gap-4 md:p-6">
-              <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center shrink-0">
+          <div className="grid grid-cols-2 gap-3 md:gap-6">
+            <div className="widget-hover feature-widget relative min-w-[82%] snap-center flex items-center gap-3 p-4 rounded-xl bg-background border border-border transition-all duration-300 md:min-w-0 md:gap-4 md:p-6">
+              <div className="absolute right-2 top-1/2 -translate-y-1/2 shrink-0 w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center opacity-20 pointer-events-none">
                 <Zap className="w-6 h-6 text-accent" />
               </div>
               <div>
-                <h3 className="font-semibold text-foreground">High Protein</h3>
-                <p className="text-muted-foreground text-sm">Sursa excelenta de proteine naturale</p>
+                <h3 className="relative z-10 min-w-0 text-xs leading-tight font-semibold text-foreground md:text-base">High Protein</h3>
+              <p className="hidden text-sm text-muted-foreground md:block">Sursa excelenta de proteine naturale</p>
               </div>
             </div>
-            <div className="widget-hover min-w-[82%] snap-center flex items-center gap-3 p-4 rounded-xl bg-background border border-border transition-all duration-300 md:min-w-0 md:gap-4 md:p-6">
-              <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center shrink-0">
+            <div className="widget-hover feature-widget relative min-w-[82%] snap-center flex items-center gap-3 p-4 rounded-xl bg-background border border-border transition-all duration-300 md:min-w-0 md:gap-4 md:p-6">
+              <div className="absolute right-2 top-1/2 -translate-y-1/2 shrink-0 w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center opacity-20 pointer-events-none">
                 <Truck className="w-6 h-6 text-accent" />
               </div>
               <div>
-                <h3 className="font-semibold text-foreground">Livrare rapida</h3>
-                <p className="text-muted-foreground text-sm">In toata Romania, in 24-48h</p>
+                <h3 className="relative z-10 min-w-0 text-xs leading-tight font-semibold text-foreground md:text-base">Livrare rapida</h3>
+              <p className="hidden text-sm text-muted-foreground md:block">In toata Romania, in 24-48h</p>
               </div>
             </div>
-            <div className="widget-hover min-w-[82%] snap-center flex items-center gap-3 p-4 rounded-xl bg-background border border-border transition-all duration-300 md:min-w-0 md:gap-4 md:p-6">
-              <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center shrink-0">
+            <div className="widget-hover feature-widget relative min-w-[82%] snap-center flex items-center gap-3 p-4 rounded-xl bg-background border border-border transition-all duration-300 md:min-w-0 md:gap-4 md:p-6">
+              <div className="absolute right-2 top-1/2 -translate-y-1/2 shrink-0 w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center opacity-20 pointer-events-none">
                 <Shield className="w-6 h-6 text-accent" />
               </div>
               <div>
-                <h3 className="font-semibold text-foreground">100% Natural</h3>
-                <p className="text-muted-foreground text-sm">Fara conservanti sau aditivi</p>
+                <h3 className="relative z-10 min-w-0 text-xs leading-tight font-semibold text-foreground md:text-base">100% Natural</h3>
+              <p className="hidden text-sm text-muted-foreground md:block">Fara conservanti sau aditivi</p>
+              </div>
+            </div>
+            <div className="widget-hover feature-widget relative min-w-[82%] snap-center flex items-center gap-3 p-4 rounded-xl bg-background border border-border transition-all duration-300 md:min-w-0 md:gap-4 md:p-6">
+              <div className="absolute right-2 top-1/2 -translate-y-1/2 shrink-0 w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center opacity-20 pointer-events-none">
+                <Heart className="w-6 h-6 text-accent" />
+              </div>
+              <div>
+                <h3 className="relative z-10 min-w-0 text-xs leading-tight font-semibold text-foreground md:text-base">Carne 100% romaneasca</h3>
+              <p className="hidden text-sm text-muted-foreground md:block">Selectata de la producatori locali</p>
               </div>
             </div>
           </div>
@@ -398,7 +429,7 @@ export default function HomePage() {
                 pastreaza textura frageda si gustul bogat. La Yaboo!, folosim o metoda de productie artizanala: 
                 selectam manual cele mai fine bucati de carne, le marinam in otet si condimente naturale timp de 24 de ore, 
                 apoi le uscam lent la temperatura controlata timp de 5-7 zile. Rezultatul? Un snack bogat in proteine, 
-                fara zahar adaugat si fara conservanti - exact asa cum se facea acum sute de ani.
+                fara zahar adaugat si fara conservanti!
               </p>
             </div>
           </div>
@@ -445,22 +476,31 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-            {[
-              { title: "Reteta traditionala", desc: "Preparat dupa metode autentice sud-africane" },
-              { title: "Ingrediente premium", desc: "Doar carne de vita romaneasca selectata" },
-              { title: "Fara aditivi", desc: "100% natural, fara conservanti" },
-              { title: "Produs local", desc: "Fabricat in Romania cu dragoste" },
-            ].map((item, i) => (
-              <div key={i} className="widget-hover text-center p-6 bg-accent rounded-xl border-0 transition-all duration-300 hover:scale-[1.06] hover:shadow-2xl hover:shadow-accent/30">
-<div className="w-12 h-12 rounded-full bg-black flex items-center justify-center mx-auto mb-4">
-	                  <span className="text-xl font-bold text-white">{i + 1}</span>
-	                </div>
-	                <h3 className="font-semibold text-black mb-2">{item.title}</h3>
-                <p className="text-black/75 text-sm">{item.desc}</p>
-              </div>
-            ))}
+  <div className="relative mb-16 md:static">
+    <button type="button" aria-label="Widgetul anterior" className="mobile-carousel-arrow absolute left-0 top-1/2 z-20 -translate-y-1/2 rounded-full bg-accent p-2 text-accent-foreground shadow-lg md:hidden" onClick={() => scrollWhyCarousel(-1)}>
+      <ChevronLeft className="h-5 w-5" />
+    </button>
+    <div ref={whyCarouselRef} className="mobile-why-carousel flex gap-4 overflow-x-auto snap-x snap-mandatory px-7 pb-2 scrollbar-hide md:grid md:grid-cols-2 md:gap-4 md:overflow-visible md:px-0 md:pb-0 lg:grid-cols-5">
+      {[
+        { title: "Reteta traditionala", desc: "Preparat dupa metode autentice sud-africane" },
+        { title: "Ingrediente premium", desc: "Doar carne de vita romaneasca selectata" },
+        { title: "Fara aditivi", desc: "100% natural, fara conservanti" },
+        { title: "Produs local", desc: "Fabricat in Romania cu dragoste" },
+        { title: "Carne 100% romaneasca", desc: "Selectata de la producatori locali" },
+      ].map((item, i) => (
+        <div key={i} className="widget-hover min-w-[86%] snap-center text-center p-6 bg-accent rounded-xl border-0 transition-all duration-300 hover:scale-[1.06] hover:shadow-2xl hover:shadow-accent/30 md:min-w-0">
+          <div className="w-12 h-12 rounded-full bg-black flex items-center justify-center mx-auto mb-4">
+            <span className="text-xl font-bold text-white">{i + 1}</span>
           </div>
+          <h3 className="font-semibold text-black mb-2">{item.title}</h3>
+          <p className="text-black/75 text-sm">{item.desc}</p>
+        </div>
+      ))}
+    </div>
+    <button type="button" aria-label="Widgetul urmator" className="mobile-carousel-arrow absolute right-0 top-1/2 z-20 -translate-y-1/2 rounded-full bg-accent p-2 text-accent-foreground shadow-lg md:hidden" onClick={() => scrollWhyCarousel(1)}>
+      <ChevronRight className="h-5 w-5" />
+    </button>
+  </div>
 
           {/* Bundle Product Widget */}
           {bundleProduct && (
