@@ -193,6 +193,20 @@
   transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
 }
 
+@media (min-width: 768px) {
+  .feature-widget > div:first-child {
+    position: static !important;
+    opacity: 1 !important;
+    transform: none !important;
+    pointer-events: auto;
+  }
+
+  .feature-widget > div:last-child {
+    position: static;
+    z-index: auto;
+  }
+}
+
 @media (max-width: 767px) {
   .feature-widget {
     min-width: 0;
