@@ -375,36 +375,36 @@ export default function HomePage() {
       <section className="py-12 bg-muted">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 gap-3 md:gap-6">
-            <div className="widget-hover min-w-[82%] snap-center flex items-center gap-3 p-4 rounded-xl bg-background border border-border transition-all duration-300 md:min-w-0 md:gap-4 md:p-6">
-              <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center shrink-0">
+            <div className="widget-hover feature-widget relative min-w-[82%] snap-center flex items-center gap-3 p-4 rounded-xl bg-background border border-border transition-all duration-300 md:min-w-0 md:gap-4 md:p-6">
+              <div className="absolute right-2 top-1/2 -translate-y-1/2 w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center opacity-20 pointer-events-none">
                 <Zap className="w-6 h-6 text-accent" />
               </div>
               <div>
-                <h3 className="font-semibold text-foreground">High Protein</h3>
+                <h3 className="relative z-10 min-w-0 text-xs leading-tight font-semibold text-foreground">High Protein</h3>
               </div>
             </div>
-            <div className="widget-hover min-w-[82%] snap-center flex items-center gap-3 p-4 rounded-xl bg-background border border-border transition-all duration-300 md:min-w-0 md:gap-4 md:p-6">
-              <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center shrink-0">
+            <div className="widget-hover feature-widget relative min-w-[82%] snap-center flex items-center gap-3 p-4 rounded-xl bg-background border border-border transition-all duration-300 md:min-w-0 md:gap-4 md:p-6">
+              <div className="absolute right-2 top-1/2 -translate-y-1/2 w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center opacity-20 pointer-events-none">
                 <Truck className="w-6 h-6 text-accent" />
               </div>
               <div>
-                <h3 className="font-semibold text-foreground">Livrare rapida</h3>
+                <h3 className="relative z-10 min-w-0 text-xs leading-tight font-semibold text-foreground">Livrare rapida</h3>
               </div>
             </div>
-            <div className="widget-hover min-w-[82%] snap-center flex items-center gap-3 p-4 rounded-xl bg-background border border-border transition-all duration-300 md:min-w-0 md:gap-4 md:p-6">
-              <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center shrink-0">
+            <div className="widget-hover feature-widget relative min-w-[82%] snap-center flex items-center gap-3 p-4 rounded-xl bg-background border border-border transition-all duration-300 md:min-w-0 md:gap-4 md:p-6">
+              <div className="absolute right-2 top-1/2 -translate-y-1/2 w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center opacity-20 pointer-events-none">
                 <Shield className="w-6 h-6 text-accent" />
               </div>
               <div>
-                <h3 className="font-semibold text-foreground">100% Natural</h3>
+                <h3 className="relative z-10 min-w-0 text-xs leading-tight font-semibold text-foreground">100% Natural</h3>
               </div>
             </div>
-            <div className="widget-hover min-w-[82%] snap-center flex items-center gap-3 p-4 rounded-xl bg-background border border-border transition-all duration-300 md:min-w-0 md:gap-4 md:p-6">
-              <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center shrink-0">
+            <div className="widget-hover feature-widget relative min-w-[82%] snap-center flex items-center gap-3 p-4 rounded-xl bg-background border border-border transition-all duration-300 md:min-w-0 md:gap-4 md:p-6">
+              <div className="absolute right-2 top-1/2 -translate-y-1/2 w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center opacity-20 pointer-events-none">
                 <Heart className="w-6 h-6 text-accent" />
               </div>
               <div>
-                <h3 className="font-semibold text-foreground">Carne 100% romaneasca</h3>
+                <h3 className="relative z-10 min-w-0 text-xs leading-tight font-semibold text-foreground">Carne 100% romaneasca</h3>
               </div>
             </div>
           </div>

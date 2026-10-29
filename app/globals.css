@@ -194,6 +194,31 @@
 }
 
 @media (max-width: 767px) {
+  .feature-widget {
+    min-width: 0;
+    gap: 0;
+    overflow: hidden;
+  }
+
+  .feature-widget > div:first-child {
+    position: absolute;
+    inset-inline-end: 0.65rem;
+    opacity: 0.18;
+    transform: scale(1.35);
+    pointer-events: none;
+  }
+
+  .feature-widget > div:last-child {
+    position: relative;
+    z-index: 1;
+    min-width: 0;
+  }
+
+  .feature-widget h3 {
+    font-size: 0.78rem;
+    line-height: 1.15;
+    overflow-wrap: anywhere;
+  }
   .mobile-product-track {
     display: flex;
     overflow-x: auto;
